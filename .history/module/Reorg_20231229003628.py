@@ -64,7 +64,7 @@ class reorganising():
         # Initialise: check if accetable SLFN (wt.pth) exist  
         self.acceptable_path = f'acceptable/{previous_module}.pth'
         if os.path.exists(self.acceptable_path):
-            print(f"Acceptable SLFN exist in '{self.acceptable_path}'.")
+            print(f"Acceptable SLFN exist in '{self.acceptablet_path}'.")
             self.model = torch.load(self.acceptable_path)
         else:
             print(f"Acceptable SLFN not exist in '{self.acceptable_path}'.")

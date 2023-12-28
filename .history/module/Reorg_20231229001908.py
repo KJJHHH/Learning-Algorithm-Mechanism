@@ -62,15 +62,15 @@ class reorganising():
         """        
 
         # Initialise: check if accetable SLFN (wt.pth) exist  
-        self.acceptable_path = f'acceptable/{previous_module}.pth'
-        if os.path.exists(self.acceptable_path):
-            print(f"Acceptable SLFN exist in '{self.acceptable_path}'.")
-            self.model = torch.load(self.acceptable_path)
+        self.acceptable_wt_path = f'acceptable/{previous_module}.pth'
+        if os.path.exists(self.acceptable_wt_path):
+            print(f"Acceptable SLFN exist in '{self.acceptable_wt_path}'.")
+            self.model = torch.load(self.acceptable_wt_path)
         else:
-            print(f"Acceptable SLFN not exist in '{self.acceptable_path}'.")
+            print(f"Acceptable SLFN not exist in '{self.acceptable_wt_path}'.")
             self.model = None        
                          
-        self.input_dim = self.model.layer_1.weight.data.shape[1]
+        self.input_dim = previous_module.layer_1.weight.data
         self.hidden_dim = hidden_dim
         self.train_loader = train_loader
         self.test_loader = test_loader
@@ -147,7 +147,7 @@ class reorganising():
 
             
             # stopping criteria 1
-            eps, y_pred = eps_for_each(self.train_loader, model)
+            eps, y_pred = eps_for_each(self.train_loader, self.model)
 
             if self.print_w_tune:
                 print(f"max eps sqaure: {max(eps)}")
@@ -196,7 +196,7 @@ class reorganising():
         self.model.train()     # Enter Train Mode
         train_loss_list = [] 
         test_loss_list = []
-        loss_old = 5e+6
+        loss_old = 5e+9
         temp_save_path = "_temp/reg.pth"
         optimizer = torch.optim.Adam(self.model.parameters(), lr = self.lr_reg)
 
@@ -285,7 +285,7 @@ class reorganising():
         model: model to trimmed
         k: node to be trimmed
         """
-        trim_model = TwoLayerNet(self.input_dim, self.hidden_dim-1, 1)
+        trim_model = TwoLayerNet(self.hidden_dim, self.hidden_dim-1, 1)
         param = self.model.state_dict()
         delete_status = []
         # Update nodes (del)
@@ -346,6 +346,8 @@ class reorganising():
             check_n += 1
             acceptable, train_loss_list, test_loss_list = \
                 self.regularising_EU_LG_UA()
+
+            torch.save(self.model.state_dict(), '_temp/Reorg')
             
             
             # A new model trimmed from regualr module model

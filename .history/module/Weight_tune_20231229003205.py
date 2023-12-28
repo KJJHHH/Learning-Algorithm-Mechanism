@@ -28,11 +28,11 @@ def eps_for_each(train_loader, model):
     eps = torch.zeros((1, 1), dtype=torch.float32)
     y_pred = torch.zeros((1, 1), dtype=torch.float32)
     with torch.no_grad():
-        for _, (X, y) in enumerate(train_loader):
-            y = y.reshape(-1, 1)
-            preds = model(X)
-            eps = torch.cat([eps, abs(y-preds)], axis = 0)
-            y_pred = torch.cat([y_pred, preds], axis = 0)
+    for _, (X, y) in enumerate(train_loader):
+        y = y.reshape(-1, 1)
+        preds = model(X)
+        eps = torch.cat([eps, abs(y-preds)], axis = 0)
+        y_pred = torch.cat([y_pred, preds], axis = 0)
     eps, y_pred = eps[1:], y_pred[1:]
     return eps, y_pred
 

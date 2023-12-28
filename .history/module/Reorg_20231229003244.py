@@ -63,11 +63,11 @@ class reorganising():
 
         # Initialise: check if accetable SLFN (wt.pth) exist  
         self.acceptable_path = f'acceptable/{previous_module}.pth'
-        if os.path.exists(self.acceptable_path):
-            print(f"Acceptable SLFN exist in '{self.acceptable_path}'.")
-            self.model = torch.load(self.acceptable_path)
+        if os.path.exists(self.acceptable_wt_path):
+            print(f"Acceptable SLFN exist in '{self.acceptable_wt_path}'.")
+            self.model = torch.load(self.acceptable_wt_path)
         else:
-            print(f"Acceptable SLFN not exist in '{self.acceptable_path}'.")
+            print(f"Acceptable SLFN not exist in '{self.acceptable_wt_path}'.")
             self.model = None        
                          
         self.input_dim = self.model.layer_1.weight.data.shape[1]
@@ -147,7 +147,7 @@ class reorganising():
 
             
             # stopping criteria 1
-            eps, y_pred = eps_for_each(self.train_loader, model)
+            eps, y_pred = eps_for_each(self.train_loader, self.model)
 
             if self.print_w_tune:
                 print(f"max eps sqaure: {max(eps)}")
