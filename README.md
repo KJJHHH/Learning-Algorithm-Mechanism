@@ -18,22 +18,18 @@ Predicting copper price.
 
 
 ## Mechanism
-### LTS
+
+### LTS (L11)
 
 ### Weight Tuning Module (L6)
 - Simple learning
 - If acceptable: go to Reorganise module
 - If not acceptable: go to Cramming
-![Alt text](image.png)
 
 ### Reorganising Module (L7)
 - Complex learning
-- Coping with Overfitting
-    - Weight tuning module
-    - Regularising module
-    ![Alt text](image-1.png)
-- Reorganising module
-![Alt text](image-2.png)
+- Removing irrelavent nodes
+- Coping with Overfitting problem
 
 ### Cramming Module (L9)
 - Ruled based adding nodes
