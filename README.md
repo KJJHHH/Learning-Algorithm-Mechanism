@@ -4,22 +4,30 @@
 ## Introduction
 The learning algorithm is revised learning mechanism based on two layer net with dynamic adjusting learning rate and three stopping criteria, which is epochs, small residual, and small learning rate, mentioned in cs231n. To overcome the overfitting and learning dilemma issues, two module, reorganizing module and cramming, are proposed to cope with each issues respectively.
 
-## Goals
+## Learning Goals
 Predicting copper price.
 
 ## Data
-Cleaned data provided by teacher with 18 covariate
+- Cleaned data provided by teacher with 18 covariate with dependent variable as price
+- TODO: download more data form kaggle to experiment
+
+## Environment
+- CPU
+- Python 3.10
+- Pytorch framework
+
 
 ## Mechanism
 ### LTS
 
 ### Weight Tuning Module
-- Based module
+- Simple learning
 - If acceptable: go to Reorganise module
 - If not acceptable: go to Cramming
 ![Alt text](image.png)
 
 ### Reorganising Module
+- Complex learning
 - Coping with Overfitting
     - Weight tuning module
     - Regularising module
@@ -31,8 +39,13 @@ Cleaned data provided by teacher with 18 covariate
 - Ruled based adding nodes
 - For each case that did not fit well to the model, assign three nodes for the case in the model, where the weights for each nodes is predefined
 
-### Full Module
-1. Start and INitilasie with hidden node size 1
+### Full Module (L11)
+```
+Notation
+# n: picked data to train in traing data
+# N: all training data
+```
+1. Start and INitilasie with hidden node size 1: Initilialise Module
 2. Let n = obtaining_LTS, n += 1 
     - The obtaining_LTS
     - if n > N break 
@@ -45,15 +58,12 @@ Cleaned data provided by teacher with 18 covariate
 7. Reorganise SLFN
 8. GO to step 2
 
-```
-Notation
-# n: picked data to train in traing data
-# N: all training data
-```
+
+
+
 
 ## Result
 Final model for each module store in acceptable/~
-
 
 1. Process | Without cramming and LTS
     - Weight tune (obtain acceptable model)
@@ -134,7 +144,7 @@ Final model for each module store in acceptable/~
 </table>
 
 
-- **WEIGHT TUNE MODULE**
+- **WEIGHT TUNE MODULE initialisation for experiment of first two experiment**
     - Hidden nodes: 50
     - Model: Two layers net
 
