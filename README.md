@@ -33,9 +33,9 @@ Cleaned data provided by teacher with 18 covariate
 
 ### Full Module
 1. Start and INitilasie with hidden node size 1
-2. Let n = obtaining_LTS, n += 1 # n: picked data to train in traing data
+2. Let n = obtaining_LTS, n += 1 
     - The obtaining_LTS
-    - if n > N break # N: all training data
+    - if n > N break 
 3. Selecting _LTS(n). I(n) = the picked data indexes
 4. If the learning goal for picked train data satisfied (max(eps) <= learning goal), Go step 7; Otherwise, there is oen and onlly one k in n that cause contradicton and k = [n]    
 5. Save weight
@@ -45,6 +45,11 @@ Cleaned data provided by teacher with 18 covariate
 7. Reorganise SLFN
 8. GO to step 2
 
+```
+Notation
+# n: picked data to train in traing data
+# N: all training data
+```
 
 ## Result
 Final model for each module store in acceptable/~
