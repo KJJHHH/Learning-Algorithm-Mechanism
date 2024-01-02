@@ -14,7 +14,9 @@ import gc
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-def validate(model, iterator, criterion):
+
+
+def validate_loss(model, iterator, criterion):
     model.eval()
     val_loss = 0
     with torch.no_grad():
@@ -22,15 +24,15 @@ def validate(model, iterator, criterion):
             preds = model(X)
             loss = criterion(preds, y)
             val_loss += loss.item()
-    return preds, val_loss 
+    return val_loss 
 
-def check_acceptable(train_loader, model, lr_goal):
+def check_acceptable(train_loader, model, lr_goal, X_train, y_train):
     """
     train_loader: train_loader
     model: model
     eps_bound: learning goal
     ---
-    output:
+    output: acceptable, eps, y_pred
     max eps
     acceptable
     y_pred 
@@ -39,11 +41,17 @@ def check_acceptable(train_loader, model, lr_goal):
     y_pred = torch.zeros((1, 1), dtype=torch.float32)
     with torch.no_grad():
         for _, (X, y) in enumerate(train_loader):
-            y = y.reshape(-1, 1)
+            y = y
             preds = model(X)
-            eps = torch.cat([eps, abs(y-preds)], axis = 0)
+            eps_square = torch.cat([eps, abs(y-preds)], axis = 0)
             y_pred = torch.cat([y_pred, preds], axis = 0)
     eps, y_pred = eps[1:], y_pred[1:]
+    eps_ = abs(y_train - model(X_train))
+    print("===================================")
+    for i  in eps_:
+        if i not in eps:
+            print(123123123123)
+    print("===================================")
 
     if max(eps) < lr_goal:
         return True, eps, y_pred
