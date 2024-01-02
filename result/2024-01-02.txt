@@ -3136,3 +3136,227 @@ TwoLayerNet(
   (layer_out): Linear(in_features=91, out_features=1, bias=True)
   (relu): ReLU()
 )
+    --> Start regularising_EU_LG_UA
+Try trim model: Copy model and delete nodes success
+    --> Start module_EU_LG
+[ 94.51%] ------------> Checking nodes...
+TwoLayerNet(
+  (layer_1): Linear(in_features=18, out_features=91, bias=True)
+  (layer_out): Linear(in_features=91, out_features=1, bias=True)
+  (relu): ReLU()
+)
+    --> Start regularising_EU_LG_UA
+Try trim model: Copy model and delete nodes success
+    --> Start module_EU_LG
+[ 95.60%] ------------> Checking nodes...
+TwoLayerNet(
+  (layer_1): Linear(in_features=18, out_features=91, bias=True)
+  (layer_out): Linear(in_features=91, out_features=1, bias=True)
+  (relu): ReLU()
+)
+    --> Start regularising_EU_LG_UA
+Try trim model: Copy model and delete nodes success
+    --> Start module_EU_LG
+[ 96.70%] ------------> Checking nodes...
+TwoLayerNet(
+  (layer_1): Linear(in_features=18, out_features=91, bias=True)
+  (layer_out): Linear(in_features=91, out_features=1, bias=True)
+  (relu): ReLU()
+)
+    --> Start regularising_EU_LG_UA
+Try trim model: Copy model and delete nodes success
+    --> Start module_EU_LG
+[ 97.80%] ------------> Checking nodes...
+TwoLayerNet(
+  (layer_1): Linear(in_features=18, out_features=91, bias=True)
+  (layer_out): Linear(in_features=91, out_features=1, bias=True)
+  (relu): ReLU()
+)
+    --> Start regularising_EU_LG_UA
+Try trim model: Copy model and delete nodes success
+    --> Start module_EU_LG
+[ 98.90%] ------------> Checking nodes...
+TwoLayerNet(
+  (layer_1): Linear(in_features=18, out_features=91, bias=True)
+  (layer_out): Linear(in_features=91, out_features=1, bias=True)
+  (relu): ReLU()
+)
+    --> Start regularising_EU_LG_UA
+Try trim model: Copy model and delete nodes success
+    --> Start module_EU_LG
+model after reorg: TwoLayerNet(
+  (layer_1): Linear(in_features=18, out_features=91, bias=True)
+  (layer_out): Linear(in_features=91, out_features=1, bias=True)
+  (relu): ReLU()
+)
+### New lts ###
+Total obtaining n: 358
+obtaining n over lr goal: 0
+Total select n: 363
+select n over lr goal: 5
+//////////// Start module_EU_LG Epoch ///////////
+Lr too small. non acceptable module at max eps tensor([1.8290e+08], dtype=torch.float64, grad_fn=<UnbindBackward0>)
+////////// Start CRAM and REORG with unacceptable wt //////////
+model after wt: TwoLayerNet(
+  (layer_1): Linear(in_features=18, out_features=91, bias=True)
+  (layer_out): Linear(in_features=91, out_features=1, bias=True)
+  (relu): ReLU()
+)
+eps_square (last 10) before cram: tensor([[ 6.9074],
+        [ 7.2064],
+        [ 7.2828],
+        [ 7.3420],
+        [ 7.3804],
+        [12.9719],
+        [13.5932],
+        [13.8395],
+        [13.9810],
+        [14.2186]], dtype=torch.float64, grad_fn=<SliceBackward0>)
+cramming sample 358th |0.00% total of 5
+cramming sample 359th |20.00% total of 5
+cramming sample 360th |40.00% total of 5
+cramming sample 361th |60.00% total of 5
+cramming sample 362th |80.00% total of 5
+model after cram: TwoLayerNet(
+  (layer_1): Linear(in_features=18, out_features=106, bias=True)
+  (layer_out): Linear(in_features=106, out_features=1, bias=True)
+  (relu): ReLU()
+)
+eps_sqaure (last 10) after cram: tensor([[6.9074e+00],
+        [7.2064e+00],
+        [7.2828e+00],
+        [7.3420e+00],
+        [7.3804e+00],
+        [1.1778e-23],
+        [8.6959e-21],
+        [6.7630e-24],
+        [5.2836e-23],
+        [2.8022e-23]], dtype=torch.float64, grad_fn=<SliceBackward0>)
+Acceptable SLFN exist in 'acceptable/cram.pth'.
+=================== reorganising ===================
+[ 0.00%] ------------> Checking nodes...
+TwoLayerNet(
+  (layer_1): Linear(in_features=18, out_features=106, bias=True)
+  (layer_out): Linear(in_features=106, out_features=1, bias=True)
+  (relu): ReLU()
+)
+    --> Start regularising_EU_LG_UA
+Try trim model: Copy model and delete nodes success
+    --> Start module_EU_LG
+[ 0.94%] ------------> Checking nodes...
+TwoLayerNet(
+  (layer_1): Linear(in_features=18, out_features=106, bias=True)
+  (layer_out): Linear(in_features=106, out_features=1, bias=True)
+  (relu): ReLU()
+)
+    --> Start regularising_EU_LG_UA
+Try trim model: Copy model and delete nodes success
+    --> Start module_EU_LG
+[ 1.89%] ------------> Checking nodes...
+TwoLayerNet(
+  (layer_1): Linear(in_features=18, out_features=106, bias=True)
+  (layer_out): Linear(in_features=106, out_features=1, bias=True)
+  (relu): ReLU()
+)
+    --> Start regularising_EU_LG_UA
+Try trim model: Copy model and delete nodes success
+    --> Start module_EU_LG
+[ 2.83%] ------------> Checking nodes...
+TwoLayerNet(
+  (layer_1): Linear(in_features=18, out_features=106, bias=True)
+  (layer_out): Linear(in_features=106, out_features=1, bias=True)
+  (relu): ReLU()
+)
+    --> Start regularising_EU_LG_UA
+Try trim model: Copy model and delete nodes success
+    --> Start module_EU_LG
+[ 3.77%] ------------> Checking nodes...
+TwoLayerNet(
+  (layer_1): Linear(in_features=18, out_features=106, bias=True)
+  (layer_out): Linear(in_features=106, out_features=1, bias=True)
+  (relu): ReLU()
+)
+    --> Start regularising_EU_LG_UA
+Try trim model: Copy model and delete nodes success
+    --> Start module_EU_LG
+[ 4.72%] ------------> Checking nodes...
+TwoLayerNet(
+  (layer_1): Linear(in_features=18, out_features=106, bias=True)
+  (layer_out): Linear(in_features=106, out_features=1, bias=True)
+  (relu): ReLU()
+)
+    --> Start regularising_EU_LG_UA
+Try trim model: Copy model and delete nodes success
+    --> Start module_EU_LG
+[ 5.66%] ------------> Checking nodes...
+TwoLayerNet(
+  (layer_1): Linear(in_features=18, out_features=106, bias=True)
+  (layer_out): Linear(in_features=106, out_features=1, bias=True)
+  (relu): ReLU()
+)
+    --> Start regularising_EU_LG_UA
+Try trim model: Copy model and delete nodes success
+    --> Start module_EU_LG
+[ 6.60%] ------------> Checking nodes...
+TwoLayerNet(
+  (layer_1): Linear(in_features=18, out_features=106, bias=True)
+  (layer_out): Linear(in_features=106, out_features=1, bias=True)
+  (relu): ReLU()
+)
+    --> Start regularising_EU_LG_UA
+Try trim model: Copy model and delete nodes success
+    --> Start module_EU_LG
+[ 7.55%] ------------> Checking nodes...
+TwoLayerNet(
+  (layer_1): Linear(in_features=18, out_features=106, bias=True)
+  (layer_out): Linear(in_features=106, out_features=1, bias=True)
+  (relu): ReLU()
+)
+    --> Start regularising_EU_LG_UA
+Try trim model: Copy model and delete nodes success
+    --> Start module_EU_LG
+[ 8.49%] ------------> Checking nodes...
+TwoLayerNet(
+  (layer_1): Linear(in_features=18, out_features=106, bias=True)
+  (layer_out): Linear(in_features=106, out_features=1, bias=True)
+  (relu): ReLU()
+)
+    --> Start regularising_EU_LG_UA
+Try trim model: Copy model and delete nodes success
+    --> Start module_EU_LG
+[ 9.43%] ------------> Checking nodes...
+TwoLayerNet(
+  (layer_1): Linear(in_features=18, out_features=106, bias=True)
+  (layer_out): Linear(in_features=106, out_features=1, bias=True)
+  (relu): ReLU()
+)
+    --> Start regularising_EU_LG_UA
+Try trim model: Copy model and delete nodes success
+    --> Start module_EU_LG
+[ 10.38%] ------------> Checking nodes...
+TwoLayerNet(
+  (layer_1): Linear(in_features=18, out_features=106, bias=True)
+  (layer_out): Linear(in_features=106, out_features=1, bias=True)
+  (relu): ReLU()
+)
+    --> Start regularising_EU_LG_UA
+Try trim model: Copy model and delete nodes success
+    --> Start module_EU_LG
+[ 11.32%] ------------> Checking nodes...
+TwoLayerNet(
+  (layer_1): Linear(in_features=18, out_features=106, bias=True)
+  (layer_out): Linear(in_features=106, out_features=1, bias=True)
+  (relu): ReLU()
+)
+    --> Start regularising_EU_LG_UA
+Try trim model: Copy model and delete nodes success
+    --> Start module_EU_LG
+[ 12.26%] ------------> Checking nodes...
+TwoLayerNet(
+  (layer_1): Linear(in_features=18, out_features=106, bias=True)
+  (layer_out): Linear(in_features=106, out_features=1, bias=True)
+  (relu): ReLU()
+)
+    --> Start regularising_EU_LG_UA
+Try trim model: Copy model and delete nodes success
+    --> Start module_EU_LG
