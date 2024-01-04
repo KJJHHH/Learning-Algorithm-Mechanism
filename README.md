@@ -1,5 +1,5 @@
-# 新型學習演算法
-新型學習演算法(2021)：蔡瑞煌教授於政大資管系所開授的課程
+# 新型學習演算法 (New Learning Algorithm)
+New Learning Algorithm (2021), by Prof. TSAIH RUA-HUAN at Management Information Systems in NCCU
 
 ## Introduction
 The learning algorithm is revised learning mechanism based on two layer net with dynamic adjusting learning rate and three stopping criteria, which is epochs, small residual, and small learning rate, mentioned in cs231n. To overcome the overfitting and learning dilemma issues, two module, reorganizing module and cramming, are proposed to cope with each issues respectively.
