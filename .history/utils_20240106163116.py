@@ -43,8 +43,8 @@ def check_acceptable(train_loader, model, lr_goal, X_train = None, y_train = Non
     acceptable
     y_pred 
     """
-    eps_square = torch.zeros((1, 1), dtype=torch.float64)
-    y_pred = torch.zeros((1, 1), dtype=torch.float64)
+    eps_square = torch.zeros((1, 1), dtype=torch.float64).to(device)
+    y_pred = torch.zeros((1, 1), dtype=torch.float64).to(device)
     for _, (X, y) in enumerate(train_loader):
         y = y
         preds = model(X)
@@ -57,3 +57,7 @@ def check_acceptable(train_loader, model, lr_goal, X_train = None, y_train = Non
         return True, eps_square, y_pred
     else:
         return False, eps_square, y_pred
+
+def write(out_file, log):
+    out_file.write(log)
+    print()

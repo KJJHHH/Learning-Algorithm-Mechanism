@@ -2,7 +2,7 @@
 New Learning Algorithm (2021), by Prof. TSAIH RUA-HUAN at Management Information Systems in NCCU
 
 ## Introduction
-The learning algorithm is revised learning mechanism based on two layer net with dynamic adjusting learning rate and three stopping criteria, which is epochs, small residual, and small learning rate, mentioned in cs231n. To overcome the overfitting and learning dilemma issues, two module, reorganizing module and cramming, are proposed to cope with each issues respectively.
+The learning algorithm is a revised learning mechanism based on simple two layer net. To overcome the overfitting and learning dilemma issues, two module, reorganizing module and cramming, are proposed to cope with each issues respectively.
 
 ## Learning Goals
 Predicting copper price.
